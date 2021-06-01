@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.Extensions.Logging;
 using Ordering.Application.Contracts.Persistence;
+using Ordering.Application.Exceptions;
 using Ordering.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -26,13 +27,14 @@ namespace Ordering.Application.Features.Orders.Commands.DeleteOrder
         }
         public async Task<Unit> Handle(DeleteOrderCommand request, CancellationToken cancellationToken)
         {
-            var deleteToOrder = await _orderRepository.GetByIdAsync(request.Id);
-            if (deleteToOrder == null)
+            var orderToDelete = await _orderRepository.GetByIdAsync(request.Id);
+            if (orderToDelete == null)
             {
-                _logger.LogError("Order not exist on database");
+                throw new NotFoundException(nameof(Order), request.Id);
             }
-            _mapper.Map(request, deleteToOrder, typeof(DeleteOrderCommand), typeof(Order));
-            await _orderRepository.DeleteAsync(deleteToOrder);
+           
+            await _orderRepository.DeleteAsync(orderToDelete);
+            _logger.LogInformation($"Order {orderToDelete.Id} is successfully deleted.");
             return Unit.Value;
         }
     }
