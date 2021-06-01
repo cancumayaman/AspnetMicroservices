@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ordering.Application.Features.Commands.CheckoutOrder
+namespace Ordering.Application.Features.Orders.Commands.CheckoutOrder
 {
    public class CheckoutOrderCommand:IRequest<int>
     {

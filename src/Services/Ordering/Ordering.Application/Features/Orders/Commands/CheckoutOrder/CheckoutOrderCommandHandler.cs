@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Ordering.Application.Features.Commands.CheckoutOrder
+namespace Ordering.Application.Features.Orders.Commands.CheckoutOrder
 {
     public class CheckoutOrderCommandHandler : IRequestHandler<CheckoutOrderCommand, int>
     {

@@ -5,12 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ordering.Application.Features.Commands.CheckoutOrder
+namespace Ordering.Application.Features.Orders.Commands.UpdateOrder
 {
-   public class CheckoutOrderCommandValidator:AbstractValidator<CheckoutOrderCommand>
+   public class UpdateOrderCommandValidator:AbstractValidator<UpdateOrderCommand>
     {
-
-        public CheckoutOrderCommandValidator()
+        public UpdateOrderCommandValidator()
         {
             RuleFor(p => p.UserName).NotEmpty().WithMessage("{UserName} is required.").NotNull().MaximumLength(50).WithMessage("{UserName} must not exceed 50 characters.");
             RuleFor(p => p.EmailAddress).NotEmpty().WithMessage("{EmailAddress} is required.");
