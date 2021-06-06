@@ -1,14 +1,12 @@
 ﻿using Microsoft.Extensions.Logging;
 using Ordering.Domain.Entities;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Ordering.Infrastructure.Persistence
 {
-   public  class OrderContextSeed
+    public class OrderContextSeed
     {
         public static async Task SeedAsync(OrderContext orderContext, ILogger<OrderContextSeed> logger)
         {
@@ -24,7 +22,7 @@ namespace Ordering.Infrastructure.Persistence
         {
             return new List<Order>
             {
-                new Order() {UserName = "swn", FirstName = "Can Cuma", LastName = "Yaman", EmailAddress = "cancumayamann@gmail.com", AddressLine = "Ankara", Country = "Turkey", TotalPrice = 350 }
+                new Order() {UserName = "swn", FirstName = "Can Cuma", LastName = "YAMAN", EmailAddress = "cancumayamann@gmail.com", AddressLine = "Ankara", Country = "Turkey", TotalPrice = 350 }
             };
         }
     }
