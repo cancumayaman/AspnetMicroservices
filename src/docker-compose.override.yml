@@ -34,7 +34,7 @@ services:
         ACCEPT_EULA: "Y"
     restart: always
     ports:
-        - "1432:1433"
+        - "1434:1433"
 
   rabbitmq:
     container_name: rabbitmq
