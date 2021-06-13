@@ -34,7 +34,7 @@ namespace Shopping.Aggregator
              c.BaseAddress = new Uri(Configuration["ApiSettings:BasketUrl"]));
 
             services.AddHttpClient<IOrderService, OrderService>(c =>
-             c.BaseAddress = new Uri(Configuration["ApiSettings:OrderUrl"]));
+             c.BaseAddress = new Uri(Configuration["ApiSettings:OrderingUrl"]));
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
